@@ -128,7 +128,7 @@ const InteractiveBackground = () => {
     const drawRJ45 = (x: number, y: number) => {
       const colors = getColors();
       const isDark = document.documentElement.classList.contains('dark');
-      const s = 1.4; // scale
+      const s = 0.85; // scale
 
       ctx.save();
       ctx.translate(x, y);
