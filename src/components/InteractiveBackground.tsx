@@ -127,38 +127,87 @@ const InteractiveBackground = () => {
 
     const drawRJ45 = (x: number, y: number) => {
       const colors = getColors();
-      const w = 28, h = 18;
+      const w = 36, h = 24, tabH = 10, tabW = 14;
+      const isDark = document.documentElement.classList.contains('dark');
 
-      // Glow
+      ctx.save();
+
+      // Shadow / glow under connector
       ctx.shadowColor = colors.connector;
-      ctx.shadowBlur = 12;
+      ctx.shadowBlur = 18;
 
-      // Body
-      ctx.fillStyle = colors.connector;
+      // Main housing - transparent plastic look
+      const bodyGrad = ctx.createLinearGradient(x - w / 2, y - h / 2, x + w / 2, y + h / 2);
+      bodyGrad.addColorStop(0, isDark ? 'rgba(15,164,175,0.9)' : 'rgba(2,73,80,0.85)');
+      bodyGrad.addColorStop(0.5, isDark ? 'rgba(175,221,229,0.7)' : 'rgba(2,73,80,0.6)');
+      bodyGrad.addColorStop(1, isDark ? 'rgba(15,164,175,0.85)' : 'rgba(0,49,53,0.8)');
+      ctx.fillStyle = bodyGrad;
       ctx.beginPath();
-      ctx.roundRect(x - w / 2, y - h / 2, w, h, 3);
+      ctx.roundRect(x - w / 2, y - h / 2, w, h, 4);
       ctx.fill();
 
       ctx.shadowBlur = 0;
 
-      // Tab
-      ctx.fillStyle = colors.connectorLight;
-      ctx.fillRect(x - 5, y - h / 2 - 5, 10, 6);
+      // Housing outline
+      ctx.strokeStyle = isDark ? 'rgba(175,221,229,0.5)' : 'rgba(0,49,53,0.5)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.roundRect(x - w / 2, y - h / 2, w, h, 4);
+      ctx.stroke();
 
-      // Pins
-      ctx.strokeStyle = colors.connectorLight;
-      ctx.lineWidth = 1.2;
+      // Release tab (the clip on top)
+      ctx.fillStyle = isDark ? 'rgba(15,164,175,0.7)' : 'rgba(2,73,80,0.5)';
+      ctx.beginPath();
+      ctx.moveTo(x - tabW / 2, y - h / 2);
+      ctx.lineTo(x - tabW / 2 + 2, y - h / 2 - tabH);
+      ctx.lineTo(x + tabW / 2 - 2, y - h / 2 - tabH);
+      ctx.lineTo(x + tabW / 2, y - h / 2);
+      ctx.closePath();
+      ctx.fill();
+      // Tab outline
+      ctx.strokeStyle = isDark ? 'rgba(175,221,229,0.4)' : 'rgba(0,49,53,0.4)';
+      ctx.lineWidth = 0.8;
+      ctx.stroke();
+
+      // Tab ridge line
+      ctx.beginPath();
+      ctx.moveTo(x - tabW / 2 + 3, y - h / 2 - tabH + 3);
+      ctx.lineTo(x + tabW / 2 - 3, y - h / 2 - tabH + 3);
+      ctx.strokeStyle = isDark ? 'rgba(175,221,229,0.3)' : 'rgba(0,49,53,0.3)';
+      ctx.lineWidth = 0.6;
+      ctx.stroke();
+
+      // Gold contact pins (8 pins for RJ45)
+      const pinAreaW = w - 8;
+      const pinSpacing = pinAreaW / 8;
       for (let i = 0; i < 8; i++) {
-        const px = x - w / 2 + 3 + i * 3.1;
-        ctx.beginPath();
-        ctx.moveTo(px, y + 2);
-        ctx.lineTo(px, y + h / 2 - 1);
-        ctx.stroke();
+        const px = x - pinAreaW / 2 + pinSpacing * i + pinSpacing / 2;
+        const pinGrad = ctx.createLinearGradient(px, y - 2, px, y + h / 2 - 2);
+        pinGrad.addColorStop(0, isDark ? '#FFD700' : '#DAA520');
+        pinGrad.addColorStop(0.5, isDark ? '#FFF8DC' : '#FFD700');
+        pinGrad.addColorStop(1, isDark ? '#DAA520' : '#B8860B');
+        ctx.fillStyle = pinGrad;
+        ctx.fillRect(px - 1, y - 1, 2, h / 2);
       }
+
+      // Inner cavity (dark slot at bottom)
+      ctx.fillStyle = isDark ? 'rgba(0,20,25,0.6)' : 'rgba(0,0,0,0.3)';
+      ctx.beginPath();
+      ctx.roundRect(x - w / 2 + 3, y + h / 2 - 6, w - 6, 4, 1);
+      ctx.fill();
+
+      // Highlight / reflection on housing
+      ctx.fillStyle = isDark ? 'rgba(175,221,229,0.12)' : 'rgba(255,255,255,0.15)';
+      ctx.beginPath();
+      ctx.roundRect(x - w / 2 + 2, y - h / 2 + 1, w - 4, h / 3, 2);
+      ctx.fill();
+
+      ctx.restore();
     };
 
     const drawCable = (endX: number, endY: number) => {
       const colors = getColors();
+      const isDark = document.documentElement.classList.contains('dark');
       const startX = 0;
       const startY = canvas.height;
 
@@ -172,22 +221,47 @@ const InteractiveBackground = () => {
       const cp2x = startX + dx * 0.7;
       const cp2y = endY + sag;
 
-      // Outer cable
-      ctx.strokeStyle = colors.cableOuter;
-      ctx.lineWidth = 6;
+      // Cable shadow
+      ctx.strokeStyle = isDark ? 'rgba(0,0,0,0.3)' : 'rgba(0,0,0,0.15)';
+      ctx.lineWidth = 10;
       ctx.lineCap = 'round';
       ctx.beginPath();
-      ctx.moveTo(startX, startY);
-      ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, endX, endY + 9);
+      ctx.moveTo(startX + 2, startY + 2);
+      ctx.bezierCurveTo(cp1x + 2, cp1y + 2, cp2x + 2, cp2y + 2, endX + 2, endY + 13);
       ctx.stroke();
 
-      // Inner cable
-      ctx.strokeStyle = colors.cable;
-      ctx.lineWidth = 3;
+      // Outer cable jacket
+      const cableGrad = ctx.createLinearGradient(startX, startY, endX, endY);
+      cableGrad.addColorStop(0, isDark ? 'rgba(2,73,80,0.7)' : 'rgba(0,49,53,0.5)');
+      cableGrad.addColorStop(0.5, isDark ? 'rgba(15,164,175,0.5)' : 'rgba(2,73,80,0.4)');
+      cableGrad.addColorStop(1, isDark ? 'rgba(2,73,80,0.6)' : 'rgba(0,49,53,0.45)');
+      ctx.strokeStyle = cableGrad;
+      ctx.lineWidth = 7;
       ctx.beginPath();
       ctx.moveTo(startX, startY);
-      ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, endX, endY + 9);
+      ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, endX, endY + 12);
       ctx.stroke();
+
+      // Inner cable highlight (gives roundness)
+      ctx.strokeStyle = isDark ? 'rgba(175,221,229,0.15)' : 'rgba(255,255,255,0.12)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(startX, startY);
+      ctx.bezierCurveTo(cp1x, cp1y - 1, cp2x, cp2y - 1, endX, endY + 11);
+      ctx.stroke();
+
+      // Boot/strain relief at connector end
+      const bootGrad = ctx.createLinearGradient(endX - 6, endY + 8, endX + 6, endY + 16);
+      bootGrad.addColorStop(0, isDark ? 'rgba(15,164,175,0.8)' : 'rgba(2,73,80,0.6)');
+      bootGrad.addColorStop(1, isDark ? 'rgba(2,73,80,0.9)' : 'rgba(0,49,53,0.7)');
+      ctx.fillStyle = bootGrad;
+      ctx.beginPath();
+      ctx.moveTo(endX - 8, endY + 12);
+      ctx.quadraticCurveTo(endX - 10, endY + 18, endX - 5, endY + 20);
+      ctx.lineTo(endX + 5, endY + 20);
+      ctx.quadraticCurveTo(endX + 10, endY + 18, endX + 8, endY + 12);
+      ctx.closePath();
+      ctx.fill();
     };
 
     const animate = () => {
