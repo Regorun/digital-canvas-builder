@@ -128,82 +128,78 @@ const InteractiveBackground = () => {
     const drawRJ45 = (x: number, y: number) => {
       const colors = getColors();
       const isDark = document.documentElement.classList.contains('dark');
-      const s = 0.85; // scale
+      const s = 0.9;
 
       ctx.save();
       ctx.translate(x, y);
       ctx.scale(s, s);
 
       const stroke = isDark ? colors.connectorLight : colors.connector;
-      const fill = isDark ? 'rgba(15,164,175,0.15)' : 'rgba(2,73,80,0.1)';
+      const fillBody = isDark ? 'rgba(15,164,175,0.2)' : 'rgba(2,73,80,0.12)';
+      const fillPlug = isDark ? 'rgba(15,164,175,0.35)' : 'rgba(2,73,80,0.25)';
 
-      // Glow
       ctx.shadowColor = colors.connector;
-      ctx.shadowBlur = 14;
+      ctx.shadowBlur = 10;
 
-      // Outer body (trapezoid shape like network diagram icon)
-      ctx.fillStyle = fill;
+      // Cable boot (rounded bottom part where cable enters)
+      ctx.fillStyle = fillBody;
       ctx.strokeStyle = stroke;
-      ctx.lineWidth = 1.8;
+      ctx.lineWidth = 1.6;
       ctx.beginPath();
-      ctx.moveTo(-12, -16); // top-left
-      ctx.lineTo(12, -16);  // top-right
-      ctx.lineTo(14, 10);   // bottom-right (wider)
-      ctx.lineTo(-14, 10);  // bottom-left (wider)
-      ctx.closePath();
+      ctx.roundRect(-8, 8, 16, 12, [0, 0, 4, 4]);
       ctx.fill();
       ctx.stroke();
 
       ctx.shadowBlur = 0;
 
-      // Clip/tab on top (the latch)
-      ctx.fillStyle = fill;
+      // Main connector body (the plug housing)
+      ctx.fillStyle = fillPlug;
       ctx.strokeStyle = stroke;
-      ctx.lineWidth = 1.4;
+      ctx.lineWidth = 1.6;
       ctx.beginPath();
-      ctx.moveTo(-6, -16);
-      ctx.lineTo(-5, -22);
-      ctx.lineTo(5, -22);
-      ctx.lineTo(6, -16);
+      ctx.roundRect(-10, -14, 20, 24, 2);
+      ctx.fill();
       ctx.stroke();
 
-      // Small notch on clip
-      ctx.beginPath();
-      ctx.moveTo(-3, -21);
-      ctx.lineTo(3, -21);
-      ctx.strokeStyle = stroke;
+      // Contact window (recessed area showing pins)
+      ctx.fillStyle = isDark ? 'rgba(0,20,25,0.5)' : 'rgba(0,0,0,0.15)';
+      ctx.strokeStyle = isDark ? 'rgba(175,221,229,0.3)' : 'rgba(2,73,80,0.3)';
       ctx.lineWidth = 0.8;
-      ctx.stroke();
-
-      // 8 contact pins inside
-      ctx.strokeStyle = isDark ? '#AFDDE5' : '#024950';
-      ctx.lineWidth = 1.2;
-      for (let i = 0; i < 8; i++) {
-        const px = -9 + i * 2.6;
-        ctx.beginPath();
-        ctx.moveTo(px, -12);
-        ctx.lineTo(px, 2);
-        ctx.stroke();
-      }
-
-      // Bottom opening (port cavity)
-      ctx.strokeStyle = stroke;
-      ctx.lineWidth = 1.4;
       ctx.beginPath();
-      ctx.moveTo(-10, 4);
-      ctx.lineTo(10, 4);
+      ctx.roundRect(-8, -12, 16, 14, 1);
+      ctx.fill();
       ctx.stroke();
 
-      // Cable strain relief lines at bottom
-      ctx.strokeStyle = isDark ? 'rgba(175,221,229,0.3)' : 'rgba(2,73,80,0.25)';
-      ctx.lineWidth = 0.6;
-      for (let i = 0; i < 3; i++) {
-        const ly = 6 + i * 2;
+      // 8 gold pins
+      for (let i = 0; i < 8; i++) {
+        const px = -6.5 + i * 1.9;
+        ctx.strokeStyle = isDark ? '#AFDDE5' : '#024950';
+        ctx.lineWidth = 1;
         ctx.beginPath();
-        ctx.moveTo(-10 + i, ly);
-        ctx.lineTo(10 - i, ly);
+        ctx.moveTo(px, -10);
+        ctx.lineTo(px, -1);
         ctx.stroke();
+        // Pin tip
+        ctx.fillStyle = isDark ? '#AFDDE5' : '#024950';
+        ctx.beginPath();
+        ctx.arc(px, -10.5, 0.6, 0, Math.PI * 2);
+        ctx.fill();
       }
+
+      // Latch/clip (the release tab on the side)
+      ctx.strokeStyle = stroke;
+      ctx.lineWidth = 1.2;
+      ctx.beginPath();
+      ctx.moveTo(-10, -4);
+      ctx.lineTo(-14, -6);
+      ctx.lineTo(-14, -12);
+      ctx.lineTo(-10, -14);
+      ctx.stroke();
+      // Small latch nub
+      ctx.fillStyle = stroke;
+      ctx.beginPath();
+      ctx.arc(-14, -9, 1.2, 0, Math.PI * 2);
+      ctx.fill();
 
       ctx.restore();
     };
