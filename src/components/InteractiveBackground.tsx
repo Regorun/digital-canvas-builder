@@ -252,8 +252,6 @@ const InteractiveBackground = () => {
       ctx.moveTo(startX, startY);
       ctx.bezierCurveTo(cp1x, cp1y - 1, cp2x, cp2y - 1, endX, endY + 8);
       ctx.stroke();
-      ctx.closePath();
-      ctx.fill();
     };
 
     const animate = () => {
