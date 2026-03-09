@@ -127,80 +127,83 @@ const InteractiveBackground = () => {
 
     const drawRJ45 = (x: number, y: number) => {
       const colors = getColors();
-      const w = 36, h = 24, tabH = 10, tabW = 14;
       const isDark = document.documentElement.classList.contains('dark');
+      const s = 1.4; // scale
 
       ctx.save();
+      ctx.translate(x, y);
+      ctx.scale(s, s);
 
-      // Shadow / glow under connector
+      const stroke = isDark ? colors.connectorLight : colors.connector;
+      const fill = isDark ? 'rgba(15,164,175,0.15)' : 'rgba(2,73,80,0.1)';
+
+      // Glow
       ctx.shadowColor = colors.connector;
-      ctx.shadowBlur = 18;
+      ctx.shadowBlur = 14;
 
-      // Main housing - transparent plastic look
-      const bodyGrad = ctx.createLinearGradient(x - w / 2, y - h / 2, x + w / 2, y + h / 2);
-      bodyGrad.addColorStop(0, isDark ? 'rgba(15,164,175,0.9)' : 'rgba(2,73,80,0.85)');
-      bodyGrad.addColorStop(0.5, isDark ? 'rgba(175,221,229,0.7)' : 'rgba(2,73,80,0.6)');
-      bodyGrad.addColorStop(1, isDark ? 'rgba(15,164,175,0.85)' : 'rgba(0,49,53,0.8)');
-      ctx.fillStyle = bodyGrad;
+      // Outer body (trapezoid shape like network diagram icon)
+      ctx.fillStyle = fill;
+      ctx.strokeStyle = stroke;
+      ctx.lineWidth = 1.8;
       ctx.beginPath();
-      ctx.roundRect(x - w / 2, y - h / 2, w, h, 4);
+      ctx.moveTo(-12, -16); // top-left
+      ctx.lineTo(12, -16);  // top-right
+      ctx.lineTo(14, 10);   // bottom-right (wider)
+      ctx.lineTo(-14, 10);  // bottom-left (wider)
+      ctx.closePath();
       ctx.fill();
+      ctx.stroke();
 
       ctx.shadowBlur = 0;
 
-      // Housing outline
-      ctx.strokeStyle = isDark ? 'rgba(175,221,229,0.5)' : 'rgba(0,49,53,0.5)';
-      ctx.lineWidth = 1;
+      // Clip/tab on top (the latch)
+      ctx.fillStyle = fill;
+      ctx.strokeStyle = stroke;
+      ctx.lineWidth = 1.4;
       ctx.beginPath();
-      ctx.roundRect(x - w / 2, y - h / 2, w, h, 4);
+      ctx.moveTo(-6, -16);
+      ctx.lineTo(-5, -22);
+      ctx.lineTo(5, -22);
+      ctx.lineTo(6, -16);
       ctx.stroke();
 
-      // Release tab (the clip on top)
-      ctx.fillStyle = isDark ? 'rgba(15,164,175,0.7)' : 'rgba(2,73,80,0.5)';
+      // Small notch on clip
       ctx.beginPath();
-      ctx.moveTo(x - tabW / 2, y - h / 2);
-      ctx.lineTo(x - tabW / 2 + 2, y - h / 2 - tabH);
-      ctx.lineTo(x + tabW / 2 - 2, y - h / 2 - tabH);
-      ctx.lineTo(x + tabW / 2, y - h / 2);
-      ctx.closePath();
-      ctx.fill();
-      // Tab outline
-      ctx.strokeStyle = isDark ? 'rgba(175,221,229,0.4)' : 'rgba(0,49,53,0.4)';
+      ctx.moveTo(-3, -21);
+      ctx.lineTo(3, -21);
+      ctx.strokeStyle = stroke;
       ctx.lineWidth = 0.8;
       ctx.stroke();
 
-      // Tab ridge line
-      ctx.beginPath();
-      ctx.moveTo(x - tabW / 2 + 3, y - h / 2 - tabH + 3);
-      ctx.lineTo(x + tabW / 2 - 3, y - h / 2 - tabH + 3);
-      ctx.strokeStyle = isDark ? 'rgba(175,221,229,0.3)' : 'rgba(0,49,53,0.3)';
-      ctx.lineWidth = 0.6;
-      ctx.stroke();
-
-      // Gold contact pins (8 pins for RJ45)
-      const pinAreaW = w - 8;
-      const pinSpacing = pinAreaW / 8;
+      // 8 contact pins inside
+      ctx.strokeStyle = isDark ? '#AFDDE5' : '#024950';
+      ctx.lineWidth = 1.2;
       for (let i = 0; i < 8; i++) {
-        const px = x - pinAreaW / 2 + pinSpacing * i + pinSpacing / 2;
-        const pinGrad = ctx.createLinearGradient(px, y - 2, px, y + h / 2 - 2);
-        pinGrad.addColorStop(0, isDark ? '#FFD700' : '#DAA520');
-        pinGrad.addColorStop(0.5, isDark ? '#FFF8DC' : '#FFD700');
-        pinGrad.addColorStop(1, isDark ? '#DAA520' : '#B8860B');
-        ctx.fillStyle = pinGrad;
-        ctx.fillRect(px - 1, y - 1, 2, h / 2);
+        const px = -9 + i * 2.6;
+        ctx.beginPath();
+        ctx.moveTo(px, -12);
+        ctx.lineTo(px, 2);
+        ctx.stroke();
       }
 
-      // Inner cavity (dark slot at bottom)
-      ctx.fillStyle = isDark ? 'rgba(0,20,25,0.6)' : 'rgba(0,0,0,0.3)';
+      // Bottom opening (port cavity)
+      ctx.strokeStyle = stroke;
+      ctx.lineWidth = 1.4;
       ctx.beginPath();
-      ctx.roundRect(x - w / 2 + 3, y + h / 2 - 6, w - 6, 4, 1);
-      ctx.fill();
+      ctx.moveTo(-10, 4);
+      ctx.lineTo(10, 4);
+      ctx.stroke();
 
-      // Highlight / reflection on housing
-      ctx.fillStyle = isDark ? 'rgba(175,221,229,0.12)' : 'rgba(255,255,255,0.15)';
-      ctx.beginPath();
-      ctx.roundRect(x - w / 2 + 2, y - h / 2 + 1, w - 4, h / 3, 2);
-      ctx.fill();
+      // Cable strain relief lines at bottom
+      ctx.strokeStyle = isDark ? 'rgba(175,221,229,0.3)' : 'rgba(2,73,80,0.25)';
+      ctx.lineWidth = 0.6;
+      for (let i = 0; i < 3; i++) {
+        const ly = 6 + i * 2;
+        ctx.beginPath();
+        ctx.moveTo(-10 + i, ly);
+        ctx.lineTo(10 - i, ly);
+        ctx.stroke();
+      }
 
       ctx.restore();
     };
