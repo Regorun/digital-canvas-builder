@@ -128,7 +128,7 @@ const InteractiveBackground = () => {
     const drawRJ45 = (x: number, y: number) => {
       const colors = getColors();
       const isDark = document.documentElement.classList.contains('dark');
-      const s = 1.4; // scale
+      const s = 0.85; // scale
 
       ctx.save();
       ctx.translate(x, y);
@@ -225,12 +225,12 @@ const InteractiveBackground = () => {
       const cp2y = endY + sag;
 
       // Cable shadow
-      ctx.strokeStyle = isDark ? 'rgba(0,0,0,0.3)' : 'rgba(0,0,0,0.15)';
-      ctx.lineWidth = 10;
+      ctx.strokeStyle = isDark ? 'rgba(0,0,0,0.2)' : 'rgba(0,0,0,0.1)';
+      ctx.lineWidth = 5;
       ctx.lineCap = 'round';
       ctx.beginPath();
-      ctx.moveTo(startX + 2, startY + 2);
-      ctx.bezierCurveTo(cp1x + 2, cp1y + 2, cp2x + 2, cp2y + 2, endX + 2, endY + 13);
+      ctx.moveTo(startX + 1, startY + 1);
+      ctx.bezierCurveTo(cp1x + 1, cp1y + 1, cp2x + 1, cp2y + 1, endX + 1, endY + 10);
       ctx.stroke();
 
       // Outer cable jacket
@@ -239,32 +239,19 @@ const InteractiveBackground = () => {
       cableGrad.addColorStop(0.5, isDark ? 'rgba(15,164,175,0.5)' : 'rgba(2,73,80,0.4)');
       cableGrad.addColorStop(1, isDark ? 'rgba(2,73,80,0.6)' : 'rgba(0,49,53,0.45)');
       ctx.strokeStyle = cableGrad;
-      ctx.lineWidth = 7;
+      ctx.lineWidth = 3.5;
       ctx.beginPath();
       ctx.moveTo(startX, startY);
-      ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, endX, endY + 12);
+      ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, endX, endY + 9);
       ctx.stroke();
 
-      // Inner cable highlight (gives roundness)
+      // Inner cable highlight
       ctx.strokeStyle = isDark ? 'rgba(175,221,229,0.15)' : 'rgba(255,255,255,0.12)';
-      ctx.lineWidth = 2;
+      ctx.lineWidth = 1;
       ctx.beginPath();
       ctx.moveTo(startX, startY);
-      ctx.bezierCurveTo(cp1x, cp1y - 1, cp2x, cp2y - 1, endX, endY + 11);
+      ctx.bezierCurveTo(cp1x, cp1y - 1, cp2x, cp2y - 1, endX, endY + 8);
       ctx.stroke();
-
-      // Boot/strain relief at connector end
-      const bootGrad = ctx.createLinearGradient(endX - 6, endY + 8, endX + 6, endY + 16);
-      bootGrad.addColorStop(0, isDark ? 'rgba(15,164,175,0.8)' : 'rgba(2,73,80,0.6)');
-      bootGrad.addColorStop(1, isDark ? 'rgba(2,73,80,0.9)' : 'rgba(0,49,53,0.7)');
-      ctx.fillStyle = bootGrad;
-      ctx.beginPath();
-      ctx.moveTo(endX - 8, endY + 12);
-      ctx.quadraticCurveTo(endX - 10, endY + 18, endX - 5, endY + 20);
-      ctx.lineTo(endX + 5, endY + 20);
-      ctx.quadraticCurveTo(endX + 10, endY + 18, endX + 8, endY + 12);
-      ctx.closePath();
-      ctx.fill();
     };
 
     const animate = () => {
