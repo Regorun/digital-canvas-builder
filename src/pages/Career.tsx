@@ -31,7 +31,7 @@ const Career = () => (
           <div>
             <p className="text-xs text-primary font-medium mb-1">{item.period}</p>
             <h3 className="font-display font-semibold text-lg">{item.role}</h3>
-            <p className="text-sm text-accent font-medium mb-2">{item.company}</p>
+            <p className="text-sm text-primary font-medium mb-2">{item.company}</p>
             <p className="text-sm text-muted-foreground">{item.desc}</p>
           </div>
         </motion.div>
