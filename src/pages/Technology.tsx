@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const sections = [
   {
     title: 'Network & Security',
-    items: ['Arista', 'Cisco', 'Palo Alto Networks', 'Juniper', 'Fortinet', 'Zscaler', 'Akamai', 'NSX', 'Algosec'],
+    items: ['Arista', 'Cisco', 'Palo Alto Networks', 'Juniper', 'Fortinet', 'Zscaler', 'NSX', 'Algosec'],
   },
   {
     title: 'Monitoring & Observability',
