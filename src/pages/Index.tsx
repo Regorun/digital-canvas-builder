@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
 
 const cards = [
   {
@@ -82,6 +82,7 @@ const Index = () => {
         transition={{ duration: 0.7, delay: 0.3 }}
         className="grid md:grid-cols-3 gap-6 mt-8"
       >
+        <LayoutGroup>
         {cards.map((item, i) => {
           const isExpanded = expandedIndex === i;
           return (
@@ -92,6 +93,7 @@ const Index = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 + i * 0.15 }}
               layout
+              style={{ gridColumn: isExpanded ? '1 / -1' : undefined }}
             >
               <h3 className="font-display font-semibold text-lg mb-2">{item.title}</h3>
               <p className="text-muted-foreground text-sm">{item.desc}</p>
@@ -119,6 +121,7 @@ const Index = () => {
             </motion.div>
           );
         })}
+        </LayoutGroup>
       </motion.div>
     </div>
   );
