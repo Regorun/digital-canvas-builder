@@ -84,8 +84,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <p className="text-sm text-muted-foreground">
             All rights reserved. Copyright © 2026
           </p>
-          {isAbout && (
-            <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4">
               <a
                 href="https://github.com"
                 target="_blank"
@@ -105,7 +104,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
-          )}
         </div>
       </footer>
     </div>
