@@ -122,6 +122,7 @@ const Index = () => {
           );
         })}
         </LayoutGroup>
+      </motion.div>
     </div>
   );
 };
