@@ -104,7 +104,6 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
-          )}
         </div>
       </footer>
     </div>

@@ -118,7 +118,6 @@ const Index = () => {
             </motion.div>
           );
         })}
-        </LayoutGroup>
       </motion.div>
     </div>
   );
