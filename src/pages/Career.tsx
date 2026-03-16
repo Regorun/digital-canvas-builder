@@ -2,10 +2,12 @@ import { motion } from 'framer-motion';
 import { Briefcase } from 'lucide-react';
 
 const experience = [
-  { period: '2023 – Present', role: 'Senior Network Engineer', company: 'Enterprise Corp', desc: 'Leading network transformation initiatives across multi-site deployments. Architecting SD-WAN solutions and zero-trust security frameworks.' },
-  { period: '2020 – 2023', role: 'Network Security Engineer', company: 'CyberShield Inc', desc: 'Designed and implemented next-gen firewall policies, SIEM integrations, and incident response procedures for Fortune 500 clients.' },
-  { period: '2018 – 2020', role: 'Network Engineer', company: 'TechConnect Solutions', desc: 'Managed enterprise switching and routing infrastructure. Automated network provisioning using Python and Ansible.' },
-  { period: '2016 – 2018', role: 'IT Support Engineer', company: 'StartUp Hub', desc: 'Provided L2/L3 support, managed cloud infrastructure, and built monitoring dashboards.' },
+  { period: '2024 – Present', role: 'Systems Engineer 2', company: 'Tesco Technology', desc: 'Leading network transformation initiatives across multi-site deployments. Architecting SD-WAN solutions and zero-trust security frameworks.' },
+  { period: '2021 – 2024', role: 'Systems Engineer 1', company: 'Tesco Technology', desc: 'Designed and implemented next-gen firewall policies, SIEM integrations, and incident response procedures for Fortune 500 clients.' },
+  { period: '2020 – 2021', role: 'Senior Systems Engineer', company: 'Infosys Ltd', desc: 'Managed enterprise switching and routing infrastructure. Automated network provisioning using Python and Ansible.' },
+  { period: '2018 – 2020', role: 'Systems Engineer', company: 'Infosys Ltd', desc: 'Provided L2/L3 support, managed cloud infrastructure, and built monitoring dashboards.' },
+  { period: '2017 – 2018', role: 'Senior Operations Executive', company: 'Infosys Ltd', desc: 'Provided L2/L3 support, managed cloud infrastructure, and built monitoring dashboards.' },
+  { period: '2015 – 2017', role: 'Operations Executive', company: 'Infosys Ltd', desc: 'Provided L2/L3 support, managed cloud infrastructure, and built monitoring dashboards.' },
 ];
 
 const Career = () => (

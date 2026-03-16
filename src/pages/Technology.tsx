@@ -32,6 +32,7 @@ const urls: Record<string, string> = {
   'Atlassian': 'https://www.atlassian.com',
   'M365': 'https://www.microsoft.com/en-us/microsoft-365',
   'Copilot': 'https://copilot.microsoft.com',
+  'Zendesk':'https://www.zendesk.com/',
   'Microsoft': 'https://www.microsoft.com',
   'RedHat': 'https://www.redhat.com',
   'Ubuntu': 'https://ubuntu.com',
@@ -58,7 +59,7 @@ const sections = [
   },
   {
     title: 'ITSM & Collaboration',
-    items: ['Atlassian', 'M365', 'Copilot'],
+    items: ['Atlassian', 'M365', 'Copilot','Zendesk'],
   },
   {
     title: 'Operating Systems',

@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
-import { Cpu, Shield, Globe, Zap, BookOpen, Coffee } from 'lucide-react';
+import { Trophy, Globe, Smartphone, House, Bike, CreditCard  } from 'lucide-react';
 
 const interests = [
-  { icon: Cpu, title: 'Network Architecture', desc: 'Exploring cutting-edge routing protocols and fabric architectures.' },
-  { icon: Shield, title: 'Cybersecurity', desc: 'Staying ahead of threats with CTF challenges and security research.' },
-  { icon: Globe, title: 'Cloud Networking', desc: 'Multi-cloud strategies, service mesh, and edge computing.' },
-  { icon: Zap, title: 'Automation & DevOps', desc: 'Infrastructure as code, CI/CD pipelines, and GitOps workflows.' },
-  { icon: BookOpen, title: 'Continuous Learning', desc: 'Certifications, conferences, and staying current with RFCs.' },
-  { icon: Coffee, title: 'Community', desc: 'Mentoring, blogging, and contributing to open-source projects.' },
+  { icon: Bike, title: 'Motorcycling', desc: 'Proud owner of a Suzuki V-Strom 650.' },
+  { icon: CreditCard, title: 'Credit Card Enthusiast', desc: 'Maximum benefits from reward programs.' },
+  { icon: Globe, title: 'Business', desc: 'Online business owner.' },
+  { icon: Trophy, title: 'Cricket', desc: 'Active player in leather ball and box cricket.' },
+  { icon: Smartphone, title: 'Meme Jury', desc: 'Netizen that consumes dialy dozage of memes.' },
+  { icon: House , title: 'Design', desc: 'Always apperciates a good design.' },
 ];
 
 const Interests = () => (

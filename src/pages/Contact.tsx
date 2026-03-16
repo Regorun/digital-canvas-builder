@@ -20,7 +20,7 @@ const Contact = () => {
 
     setStatus('sending');
     try {
-      const res = await fetch('https://formsubmit.co/ajax/knightzeus21@gmail.com', {
+      const res = await fetch('https://formsubmit.co/ajax/jeevannrego@gmail.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
@@ -143,7 +143,7 @@ const Contact = () => {
             Prefer a live conversation? Schedule a time that works for you.
           </p>
           <a
-            href="https://calendar.google.com/calendar/appointments"
+            href="https://calendar.app.google/wZBmouEbU9rbk6V59"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-accent inline-flex items-center gap-2"
