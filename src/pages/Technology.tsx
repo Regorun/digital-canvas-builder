@@ -1,69 +1,100 @@
 import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
+import { title } from 'process';
 
 const urls: Record<string, string> = {
   'Arista': 'https://www.arista.com',
   'Cisco': 'https://www.cisco.com',
-  'Palo Alto Networks': 'https://www.paloaltonetworks.com',
   'Juniper': 'https://www.juniper.net',
   'Fortinet': 'https://www.fortinet.com',
-  'Zscaler': 'https://www.zscaler.com',
-  'NSX': 'https://www.vmware.com/products/nsx',
+  'Mist': 'https://www.mist.com',
+  'Aruba': 'https://www.arubanetworks.com',
+  'Palo Alto Networks': 'https://www.paloaltonetworks.com',
   'Algosec': 'https://www.algosec.com',
-  'Paessler': 'https://www.paessler.com',
+  'Zscaler': 'https://www.zscaler.com',
+  'Skybox': 'https://www.skyboxsecurity.com',
+  'Azure': 'https://azure.microsoft.com',
+  'AWS': 'https://aws.amazon.com',
+  'Akamai': 'https://www.akamai.com',
+  'UltraDNS': 'https://vercara.com/ultradns',
+  'Mark Monitor': 'https://www.markmonitor.com',
+  'OpenAI': 'https://www.openai.com',
+  'Copilot': 'https://copilot.microsoft.com',
+  'Ollama': 'https://ollama.com',
+  'MCP': 'https://modelcontextprotocol.io',
+  'Paessler PRTG': 'https://www.paessler.com/prtg',
+  'IP Fabric': 'https://ipfabric.io',
+  'Splunk': 'https://www.splunk.com',
+  'DX NetOps Spectrum': 'https://www.broadcom.com/products/software/network-management/dx-netops',
   'Grafana': 'https://grafana.com',
   'Prometheus': 'https://prometheus.io',
   'SolarWinds': 'https://www.solarwinds.com',
   'Nagios': 'https://www.nagios.org',
   'Cisco Prime': 'https://www.cisco.com/c/en/us/products/cloud-systems-management/prime-infrastructure/index.html',
   'NetBrain': 'https://www.netbraintech.com',
-  'Wireshark': 'https://www.wireshark.org',
+  'WireShark': 'https://www.wireshark.org',
   'Python': 'https://www.python.org',
-  'Bash': 'https://www.gnu.org/software/bash/',
-  'Powershell': 'https://learn.microsoft.com/en-us/powershell/',
+  'Bash': 'https://www.gnu.org/software/bash',
+  'Powershell': 'https://learn.microsoft.com/powershell',
   'Ansible': 'https://www.ansible.com',
   'Terraform': 'https://www.terraform.io',
   'Git': 'https://git-scm.com',
   'Github': 'https://github.com',
+  'Swagger': 'https://swagger.io',
+  'API': 'https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction',
   'Docker': 'https://www.docker.com',
   'Podman': 'https://podman.io',
   'Node js': 'https://nodejs.org',
-  'reactjs': 'https://react.dev',
-  'Atlassian': 'https://www.atlassian.com',
-  'M365': 'https://www.microsoft.com/en-us/microsoft-365',
-  'Copilot': 'https://copilot.microsoft.com',
-  'Zendesk':'https://www.zendesk.com/',
-  'Microsoft': 'https://www.microsoft.com',
-  'RedHat': 'https://www.redhat.com',
+  'React js': 'https://react.dev',
+  'Hostinger': 'https://www.hostinger.com',
+  'Atlassian JIRA': 'https://www.atlassian.com/software/jira',
+  'M365': 'https://www.microsoft.com/microsoft-365',
+  'Zendesk': 'https://www.zendesk.com',
+  'Atlassian Confluence': 'https://www.atlassian.com/software/confluence',
+  'Service Now': 'https://www.servicenow.com',
+  'Windows': 'https://www.microsoft.com/windows',
+  'RHEL': 'https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux',
   'Ubuntu': 'https://ubuntu.com',
   'Kali': 'https://www.kali.org',
-  'vmware': 'https://www.vmware.com',
+  'Raspbian': 'https://www.raspberrypi.com/software/'
 };
 
 const sections = [
   {
-    title: 'Network & Security',
-    items: ['Arista', 'Cisco', 'Palo Alto Networks', 'Juniper', 'Fortinet', 'Zscaler', 'NSX', 'Algosec'],
+    title: 'Networking',
+    items: ['Arista', 'Cisco', 'Juniper', 'Fortinet', 'Mist', 'Aruba'],
+  },
+  {
+    title: 'Security',
+    items: ['Palo Alto Networks','Algosec','Zscaler','Skybox']
+  },
+  {
+    title: 'Cloud & CDN',
+    items: ['Azure', 'AWS', 'Akamai', 'UltraDNS', 'Mark Monitor']
+  },
+  {
+    title: 'AI Engineering',
+    items: ['OpenAI', 'Copilot', 'Ollama', 'MCP']
   },
   {
     title: 'Monitoring & Observability',
-    items: ['Paessler', 'Grafana', 'Prometheus', 'SolarWinds', 'Nagios', 'Cisco Prime', 'NetBrain', 'Wireshark'],
+    items: ['Paessler PRTG','IP Fabric', 'Splunk', 'DX NetOps Spectrum', 'Grafana', 'Prometheus', 'SolarWinds', 'Nagios', 'Cisco Prime', 'NetBrain', 'Wireshark'],
   },
   {
     title: 'Coding & Automation',
-    items: ['Python', 'Bash', 'Powershell', 'Ansible', 'Terraform', 'Git', 'Github'],
+    items: ['Python', 'Bash', 'Powershell', 'Ansible', 'Terraform', 'Git', 'Github', 'Swagger', 'API'],
   },
   {
-    title: 'DevOps & Containers',
-    items: ['Docker', 'Podman', 'Node js', 'reactjs'],
+    title: 'DevOps',
+    items: ['Docker', 'Podman', 'Node js', 'Reactjs', 'Hostinger'],
   },
   {
     title: 'ITSM & Collaboration',
-    items: ['Atlassian', 'M365', 'Copilot','Zendesk'],
+    items: ['Atlassian JIRA', 'M365', 'Copilot','Zendesk','Atlassian Confluence', 'Service Now'],
   },
   {
     title: 'Operating Systems',
-    items: ['Microsoft', 'RedHat', 'Ubuntu', 'Kali', 'vmware'],
+    items: ['Windows', 'RHEL', 'Ubuntu', 'Kali', 'Raspbian'],
   },
 ];
 
