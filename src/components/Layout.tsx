@@ -8,6 +8,7 @@ const navLinks = [
   { path: '/', label: 'About' },
   { path: '/career', label: 'Career' },
   { path: '/technology', label: 'Technology' },
+  { path: '/Certifications', label: 'Certifications' },
   { path: '/case-studies', label: 'Case Studies' },
   { path: '/projects', label: 'Projects' },
   { path: '/interests', label: 'Interests' },
@@ -86,7 +87,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </p>
           <div className="flex items-center gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/Regorun"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
@@ -95,7 +96,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/jeevannrego/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"

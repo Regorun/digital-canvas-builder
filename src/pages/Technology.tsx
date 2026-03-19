@@ -13,6 +13,7 @@ const urls: Record<string, string> = {
   'Algosec': 'https://www.algosec.com',
   'Zscaler': 'https://www.zscaler.com',
   'Skybox': 'https://www.skyboxsecurity.com',
+  'Tufin': 'https://www.tufin.com/',
   'Azure': 'https://azure.microsoft.com',
   'AWS': 'https://aws.amazon.com',
   'Akamai': 'https://www.akamai.com',
@@ -22,6 +23,9 @@ const urls: Record<string, string> = {
   'Copilot': 'https://copilot.microsoft.com',
   'Ollama': 'https://ollama.com',
   'MCP': 'https://modelcontextprotocol.io',
+  'Anthropic':'https://claude.ai/login',
+  'Openclaw':'https://openclaw.ai/',
+  'Claude code': 'https://claude.com/product/claude-code',
   'Paessler PRTG': 'https://www.paessler.com/prtg',
   'IP Fabric': 'https://ipfabric.io',
   'Splunk': 'https://www.splunk.com',
@@ -47,6 +51,7 @@ const urls: Record<string, string> = {
   'Node js': 'https://nodejs.org',
   'React js': 'https://react.dev',
   'Hostinger': 'https://www.hostinger.com',
+  'javascript': 'https://javascript.info/',
   'Atlassian JIRA': 'https://www.atlassian.com/software/jira',
   'M365': 'https://www.microsoft.com/microsoft-365',
   'Zendesk': 'https://www.zendesk.com',
@@ -66,7 +71,7 @@ const sections = [
   },
   {
     title: 'Security',
-    items: ['Palo Alto Networks','Algosec','Zscaler','Skybox']
+    items: ['Palo Alto Networks','Algosec','Zscaler','Skybox','Tufin']
   },
   {
     title: 'Cloud & CDN',
@@ -74,7 +79,7 @@ const sections = [
   },
   {
     title: 'AI Engineering',
-    items: ['OpenAI', 'Copilot', 'Ollama', 'MCP']
+    items: ['OpenAI', 'Copilot', 'Ollama', 'MCP', 'Anthropic', 'Openclaw', 'Claude code']
   },
   {
     title: 'Monitoring & Observability',
@@ -86,7 +91,7 @@ const sections = [
   },
   {
     title: 'DevOps',
-    items: ['Docker', 'Podman', 'Node js', 'Reactjs', 'Hostinger'],
+    items: ['Docker', 'Podman', 'Node js', 'React js', 'Hostinger', 'javascript'],
   },
   {
     title: 'ITSM & Collaboration',
