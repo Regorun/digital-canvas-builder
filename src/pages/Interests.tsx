@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
-import { Trophy, Globe, Smartphone, House, Bike, CreditCard  } from 'lucide-react';
+import { Trophy, Globe, Smartphone, Film, Bike, CreditCard  } from 'lucide-react';
 
 const interests = [
   { icon: Bike, title: 'Motorcycling', desc: 'Proud owner of a Suzuki V-Strom 650.' },
   { icon: CreditCard, title: 'Credit Card Enthusiast', desc: 'Maximum benefits from reward programs.' },
-  { icon: Globe, title: 'Business', desc: 'Online business owner.' },
+  { icon: Globe, title: 'Business', desc: 'Servers as CTO at https://www.vinca-shipping.com' },
   { icon: Trophy, title: 'Cricket', desc: 'Active player in leather ball and box cricket.' },
   { icon: Smartphone, title: 'Meme Jury', desc: 'Netizen that consumes dialy dozage of memes.' },
-  { icon: House , title: 'Design', desc: 'Always apperciates a good design.' },
+  { icon: Film , title: 'Movies', desc: 'Absolutely loves the film-making process.' },
 ];
 
 const Interests = () => (

@@ -64,15 +64,14 @@ const Index = () => {
         <h1 className="page-title">
           Jeevan Rego
           <br />
-          <span className="text-primary">Infrastructure & Network Automation Lead</span>
+          <span className="text-primary">Infrastructure Automation Lead & Network Specialist</span>
         </h1>
         <p className="page-subtitle mb-12">
           with 10+ years of experience driving large-scale enterprise modernization 
           across campus and data center environments. Proven track record of building and leading teams, 
-          executing transformational projects with zero downtime, and institutionalizing SRE and observability frameworks. Strong 
-          in stakeholder management, risk governance, and delivering automation-first reliability strategies aligned with business goals. 
-          Designing, building, and securing enterprise networks with precision and passion.
-          Specialized in next-gen firewalls, SD-WAN, cloud security, and network automation.
+          executing transformational projects with zero downtime, institutionalizing SRE and observability frameworks, 
+          managemening stakeholders, risk governance, and delivering automation-first reliability strategies aligned with business goals. 
+          Also specializing in designing, building, and securing enterprise networks with precision and passion.
         </p>
       </motion.div>
 
