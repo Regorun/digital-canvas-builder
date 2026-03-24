@@ -5,7 +5,7 @@ const projects = [
   { title: 'NetAutomate', desc: 'Python-based network automation toolkit for multi-vendor environments. Supports Cisco, Arista, and Juniper.', tags: ['Python', 'Netmiko', 'NAPALM'] },
   { title: 'InfraMonitor', desc: 'Real-time infrastructure monitoring dashboard with alerting, built on PRTG and custom APIs.', tags: ['React', 'API', 'Monitoring'] },
   { title: 'SecPolicy Generator', desc: 'Automated security policy generator for Palo Alto and Zscaler firewalls from YAML definitions.', tags: ['Automation', 'Security', 'YAML'] },
-  { title: 'CloudBridge', desc: 'Hybrid cloud connectivity manager for AWS and Azure with automated VPN tunneling.', tags: ['Cloud', 'Terraform', 'VPN'] },
+  { title: 'Route Count', desc: '', tags: ['PaloAlto', 'Python', 'API', 'PRTG'] },
 ];
 
 const Projects = () => (

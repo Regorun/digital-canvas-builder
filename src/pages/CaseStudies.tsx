@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Network, Shield, Cloud, Cpu } from 'lucide-react';
+import { ArrowRight, BrickWall, Shield, Cloud, Cpu } from 'lucide-react';
 
 const studies = [
-  { title: 'Enterprise SD-WAN Migration', tag: 'Networking', icon: Network, desc: 'Migrated 120+ branch offices from legacy MPLS to a modern SD-WAN architecture, reducing costs by 40% while improving application performance.', expanded: 'Led the end-to-end migration strategy including vendor selection, pilot rollouts, and phased deployments. Implemented application-aware routing policies, centralized orchestration, and automated failover mechanisms across all branch locations.' },
+  { title: 'Route Count', tag: 'Observability', icon: BrickWall, desc: 'Overcoming OEM limitations by engineering an alerting framework.', expanded: 'Within Palo Alto Networks firewall platforms, wherein the absence of native telemetry for routing table saturation could result in silent route drops and potential network instability.\nArchitected and deployed a custom telemetry augmentation solution leveraging Python-based automation integrated with PRTG Network Monitor. This solution programmatically interrogates the firewall’s routing information base (RIB) to derive real-time metrics on route table utilization, effectively bridging the gap in native monitoring capabilities.\nAdditionally, designed an advanced visualization layer enabling trend analysis through dynamic mapping of routing table growth patterns, facilitating predictive capacity planning, anomaly detection, and preemptive incident mitigation. This initiative significantly enhanced network reliability, operational visibility, and reduced the risk of undetected routing failures in production environments.' },
   { title: 'Zero Trust Security Implementation', tag: 'Security', icon: Shield, desc: 'Designed and deployed a zero-trust framework across a global organization, integrating identity-aware proxies and micro-segmentation.', expanded: 'Architected a comprehensive zero-trust model incorporating continuous verification, least-privilege access controls, and micro-segmentation using next-gen firewalls. Integrated with IAM platforms for context-aware policy enforcement across cloud and on-premises environments.' },
   { title: 'Cloud-First Network Redesign', tag: 'Cloud', icon: Cloud, desc: 'Re-architected the network for a cloud-first strategy, implementing hybrid connectivity and automated failover.', expanded: 'Designed hybrid connectivity leveraging SD-WAN and direct cloud interconnects to AWS and Azure. Built automated failover and traffic engineering policies, reducing cloud application latency by 55% and ensuring 99.99% uptime for critical workloads.' },
   { title: 'SOC Automation Pipeline', tag: 'Automation', icon: Cpu, desc: 'Built an automated threat detection and response pipeline, reducing mean time to respond (MTTR) by 65%.', expanded: 'Developed an end-to-end automation pipeline integrating SIEM, SOAR, and threat intelligence feeds. Created custom playbooks for automated triage, enrichment, and containment, enabling the SOC team to focus on advanced threat hunting and strategic initiatives.' },
@@ -51,7 +51,12 @@ const CaseStudies = () => {
                       className="overflow-hidden"
                     >
                       <p className="text-sm text-muted-foreground pt-3 mt-3 border-t border-border">
-                        {s.expanded}
+                           {s.expanded.split('\n').map((line, index) => (
+                            <span key={index}>
+                            {line}
+                            <br />
+                            </span>
+                        ))}
                       </p>
                     </motion.div>
                   )}
