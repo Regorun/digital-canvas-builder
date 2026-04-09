@@ -9,7 +9,7 @@ import Career from "./pages/Career";
 import Technology from "./pages/Technology";
 import Accolades from "./pages/Accolades";
 import CaseStudies from "./pages/CaseStudies";
-import Projects from "./pages/Projects";
+//import Projects from "./pages/Projects";
 import Interests from "./pages/Interests";
 import Goodies from "./pages/Goodies";
 import NotFound from "./pages/NotFound";
@@ -28,7 +28,6 @@ const App = () => (
             <Route path="/technology" element={<Technology />} />
             <Route path="/accolades" element={<Accolades />} />
             <Route path="/case-studies" element={<CaseStudies />} />
-            <Route path="/projects" element={<Projects />} />
             <Route path="/interests" element={<Interests />} />
             <Route path="/goodies" element={<Goodies />} />
             <Route path="/contact" element={<Contact />} />
