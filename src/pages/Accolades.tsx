@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Award, BookOpen, Trophy, GraduationCap } from 'lucide-react';
 
 const studies = [
+  { title: 'Algosec Certified Expert', tag: 'Certification', icon: Award, desc: '', expanded: 'Due in June 2026' },
+  { title: 'Algosec Certified System Administration', tag: 'Certification', icon: Award, desc: '', expanded: 'Results pending' },
   { title: 'Cisco Certified Network Professional (CCNP)', tag: 'Course', icon: BookOpen, desc: '', expanded: 'Pursuing' },
   { title: 'Project Management Professional (PMP)', tag: 'Course', icon: BookOpen, desc: '', expanded: 'Pursuing' },
   { title: 'Spotlight Award', tag: 'Award', icon: Trophy, desc: '', expanded:'Feb-2026\n“No one tries harder for our customers” – For bridging the observability gap in incident management.'},
