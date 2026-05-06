@@ -3,12 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Award, BookOpen, Trophy, GraduationCap } from 'lucide-react';
 
 const studies = [
-  { title: 'Algosec Certified Expert', tag: 'Certification', icon: Award, desc: '', expanded: 'Due in June 2026' },
-  { title: 'Algosec Certified System Administration', tag: 'Certification', icon: Award, desc: '', expanded: 'Results pending' },
+  { title: 'Algosec Certified ASMS Expert', tag: 'Certification', icon: Award, desc: '', expanded: 'Due in June 2026' },
+  { title: 'Algosec Certified ASMS Security Admin', tag: 'Certification', icon: Award, desc: '', expanded: 'Verification: 01VNKWmSSATS' },
   { title: 'Cisco Certified Network Professional (CCNP)', tag: 'Course', icon: BookOpen, desc: '', expanded: 'Pursuing' },
   { title: 'Project Management Professional (PMP)', tag: 'Course', icon: BookOpen, desc: '', expanded: 'Pursuing' },
-  { title: 'Spotlight Award', tag: 'Award', icon: Trophy, desc: '', expanded:'Feb-2026\n“No one tries harder for our customers” – For bridging the observability gap in incident management.'},
   { title: 'Algosec Certified Security User', tag: 'Certification', icon: Award, desc: '', expanded: 'Issued: Mar-2025\nVerification: 01VNKWmFOCTA' },
+  { title: 'Spotlight Award', tag: 'Award', icon: Trophy, desc: '', expanded:'Feb-2026\n“No one tries harder for our customers” – For bridging the observability gap in incident management.'},
   { title: 'Oustanding Performaner', tag: 'Award', icon: Trophy, desc: '', expanded:'Jun-2024\nCEO recognized letter of honor for excellence in Infrastructure deliverables.'},
   { title: 'VMware Certified Professional – Network Virtualization (VCP-NV)', tag: 'Certification', icon: Award, desc: '', expanded: 'Issued: Jun-2024\nVerification: BDCM00911434' },
   { title: 'Spotlight Award', tag: 'Award', icon: Trophy, desc: '', expanded:'Dec-2023\nIntroduced new effective monitoring on VMware NSX infrastructure & identification and migration of Windows End-Of-Life servers'},
