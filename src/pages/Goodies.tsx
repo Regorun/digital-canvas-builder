@@ -2,6 +2,13 @@ import { motion } from 'framer-motion';
 import { Download, FileText, Link as LinkIcon } from 'lucide-react';
 
 const goodies = [
+    {
+    icon: Download,
+    title: 'Photos Cleanup',
+    desc: 'A windows app that moves identical photos into separate folder.',
+    type: 'EXE',
+    link: 'https://github.com/Regorun/PhotosCleanup/releases/download/v1/PhotosCleanup.exe'
+  },
   {
     icon: Download,
     title: 'AAE cleanup',
