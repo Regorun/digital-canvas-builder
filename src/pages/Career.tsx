@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import { Briefcase } from 'lucide-react';
 
 const experience = [
-  { period: '2024 – Present', role: 'Systems Engineer 2', company: 'Tesco Technology', desc: 'Working as a lead in NWT (New World Tech) Team with current focus on implementing AI solution to deliver real measurable output.' },
-  { period: '2021 – 2024', role: 'Systems Engineer 1', company: 'Tesco Technology', desc: 'Served as an SME (Subject Matter Expert) for Infrastructure Automations. Also handling high priority major incidents related to the network infrastructure in the business.' },
+  { period: '2024 – Present', role: 'Systems Engineer 2', company: 'Tesco Technology', desc: 'Positioned as DevNetOps lead, with current focus on implementing AI solution to deliver real measurable output at infrastructure scale.' },
+  { period: '2021 – 2024', role: 'Systems Engineer 1', company: 'Tesco Technology', desc: 'Served as an SME (Subject Matter Expert) for Network Automations. Also handling high priority major incidents related to the network infrastructure in the business.' },
   { period: '2020 – 2021', role: 'Senior Systems Engineer', company: 'Infosys Ltd', desc: 'Transformation of remote site infrastructure to SD-WAN solutions for enhanced scalability, resilience, and operational efficiencies.' },
   { period: '2018 – 2020', role: 'Systems Engineer', company: 'Infosys Ltd', desc: 'Collaborated with Engineering Teams and facilitated user acceptance testing (UAT), System Integration Testing (SIT), Quality assurance (QA) for SD-WAN migrations at a global sports retail client.' },
   { period: '2017 – 2018', role: 'Senior Operations Executive', company: 'Infosys Ltd', desc: 'Designed and deployed Python-based automation to network BAU (Business-As-Usual) activities and enhance operational productivity.' },
