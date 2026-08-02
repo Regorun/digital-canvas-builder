@@ -4,32 +4,32 @@ import { motion, AnimatePresence } from 'framer-motion';
 const cards = [
   {
     title: 'AI Engineering',
-    desc: 'Enterprise-grade architectures built for scale, resilience, and performance.',
-    expanded: 'Leveraging large language models, ML pipelines, and intelligent automation to transform network operations. Building AI-driven solutions for predictive analytics, anomaly detection, and self-healing infrastructure.',
+    desc: 'Leveraging LLMs and ML pipelines',
+    expanded: 'Intelligent automations to transform network operations. Building AI-driven solutions for predictive analytics, anomaly detection, and self-healing infrastructure.',
   },
   {
     title: 'Automations',
-    desc: 'Enterprise-grade architectures built for scale, resilience, and performance.',
-    expanded: 'End-to-end automation using Ansible, Terraform, Python, and CI/CD pipelines. Automating provisioning, configuration management, compliance checks, and incident response workflows across multi-vendor environments.',
+    desc: 'Simplifying infrastructure operations',
+    expanded: 'End-to-end automation using scripts, APIs and black magic! Automating provisioning, configuration management, compliance checks, and incident response workflows across multi-vendor environments.',
   },
   {
     title: 'Monitoring & Observability',
-    desc: 'Enterprise-grade architectures built for scale, resilience, and performance.',
-    expanded: 'Implementing full-stack observability with Grafana, Prometheus, and PRTG. Building dashboards, alerting frameworks, and SRE practices that provide real-time visibility into network health and application performance.',
+    desc: 'The eye of Sauron',
+    expanded: 'Implementing full-stack observability with the three pillars. Building dashboards, alerting frameworks, and SRE practices that provide real-time visibility into network health and application performance.',
   },
   {
     title: 'Network Operations',
-    desc: 'Enterprise-grade architectures built for scale, resilience, and performance.',
+    desc: 'Bread and butter',
     expanded: 'Managing large-scale campus and data center networks with zero-downtime deployments. Expertise in routing protocols, switching fabrics, SD-WAN, and network lifecycle management across enterprise environments.',
   },
   {
     title: 'Network Design',
-    desc: 'Enterprise-grade architectures built for scale, resilience, and performance.',
+    desc: 'Leveling up',
     expanded: 'Designing resilient, scalable network architectures including spine-leaf fabrics, VXLAN overlays, and segmented security zones. Creating high-level and low-level designs aligned with business requirements and industry best practices.',
   },
   {
     title: 'Security',
-    desc: 'Frameworks, threat detection, and compliance-driven security posture.',
+    desc: 'No compromises',
     expanded: 'Deploying next-gen firewalls, zero-trust architectures, and micro-segmentation strategies. Implementing threat detection, vulnerability management, and compliance frameworks across cloud and on-premises environments.',
   },
 ];
@@ -70,7 +70,7 @@ const Index = () => {
           with 10+ years of experience driving large-scale enterprise modernization 
           across campus and data center environments. Proven track record of building and leading teams, 
           executing transformational projects with zero downtime, institutionalizing SRE and observability frameworks, 
-          managemening stakeholders, risk governance, and delivering automation-first reliability strategies aligned with business goals. 
+          managing stakeholders, risk governance, and delivering automation-first reliability strategies aligned with business goals. 
           Also specializing in designing, building, and securing enterprise networks with precision and passion.
         </p>
       </motion.div>

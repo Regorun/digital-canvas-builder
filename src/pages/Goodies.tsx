@@ -22,6 +22,13 @@ const goodies = [
     desc: 'Windows .exe to organise duplicate filenames',
     type: 'EXE',
     link: 'https://github.com/Regorun/iphone_to_windows_file_transfers/releases/download/v2/find_duplicates.exe'
+  },
+  {
+    icon: Download,
+    title: 'Used car inspection checklist',
+    desc: 'Checklist for pre-purchase inspection of used car',
+    type: 'TXT',
+    link: 'https://github.com/Regorun/Used-car/releases/download/used-car/used_car_inspection_checklist.txt'
   }
 ];
 

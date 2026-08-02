@@ -3,8 +3,8 @@ import { Trophy, Globe, Smartphone, Film, Bike, CreditCard  } from 'lucide-react
 
 const interests = [
   { icon: Bike, title: 'Motorcycling', desc: 'Proud owner of a Suzuki V-Strom 650.' },
-  { icon: CreditCard, title: 'Credit Card Enthusiast', desc: 'Maximum benefits from reward programs.' },
-  { icon: Globe, title: 'Business', desc: 'Servering as a Technology Consultant at Vinca Shipping' },
+  { icon: CreditCard, title: 'Credit Card Enthusiast', desc: 'Maximizing benefits from loyalty programs.' },
+  { icon: Globe, title: 'Business', desc: 'Technology consultant at Vinca Shipping LLC & Regorum LLP' },
   { icon: Trophy, title: 'Cricket', desc: 'Active player in leather ball and box cricket.' },
   { icon: Smartphone, title: 'Meme Jury', desc: 'Netizen that consumes dialy dozage of memes.' },
   { icon: Film , title: 'Movies', desc: 'Absolutely loves the film-making process.' },

@@ -17,6 +17,7 @@ const urls: Record<string, string> = {
   'Azure': 'https://azure.microsoft.com',
   'AWS': 'https://aws.amazon.com',
   'Akamai': 'https://www.akamai.com',
+  'Cloudflare': 'https://www.cloudflare.com',
   'UltraDNS': 'https://vercara.com/ultradns',
   'Mark Monitor': 'https://www.markmonitor.com',
   'OpenAI': 'https://www.openai.com',
@@ -25,7 +26,7 @@ const urls: Record<string, string> = {
   'MCP': 'https://modelcontextprotocol.io',
   'Anthropic':'https://claude.ai/login',
   'Openclaw':'https://openclaw.ai/',
-  'Claude code': 'https://claude.com/product/claude-code',
+  'Hugging Face': 'https://huggingface.co/',
   'Paessler PRTG': 'https://www.paessler.com/prtg',
   'IP Fabric': 'https://ipfabric.io',
   'Splunk': 'https://www.splunk.com',
@@ -61,7 +62,15 @@ const urls: Record<string, string> = {
   'RHEL': 'https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux',
   'Ubuntu': 'https://ubuntu.com',
   'Kali': 'https://www.kali.org',
-  'Raspbian': 'https://www.raspberrypi.com/software/'
+  'Raspbian': 'https://www.raspberrypi.com/software/',
+  'New Relic' : 'https://newrelic.com/',
+  'Science Logic': 'https://sciencelogic.com/',
+  'Logic Monitor' : 'https://www.logicmonitor.com/',
+  'Manage Engine' : 'https://www.manageengine.com/?pos=MEhome&loc=MElogo',
+  'Kubernetes': 'https://kubernetes.io/',
+  'Miro':'https://miro.com/',
+  'BigPanda' : 'https://www.bigpanda.io/',
+  'Debian': 'https://www.debian.org/'
 };
 
 const sections = [
@@ -75,15 +84,15 @@ const sections = [
   },
   {
     title: 'Cloud & CDN',
-    items: ['Azure', 'AWS', 'Akamai', 'UltraDNS', 'Mark Monitor']
+    items: ['Azure', 'AWS', 'Akamai', 'UltraDNS', 'Mark Monitor', 'Cloudflare']
   },
   {
     title: 'AI Engineering',
-    items: ['OpenAI', 'Copilot', 'Ollama', 'MCP', 'Anthropic', 'Openclaw', 'Claude code']
+    items: ['OpenAI', 'Copilot', 'Ollama', 'MCP', 'Anthropic', 'Openclaw', 'Hugging Face']
   },
   {
     title: 'Monitoring & Observability',
-    items: ['Paessler PRTG','IP Fabric', 'Splunk', 'DX NetOps Spectrum', 'Grafana', 'Prometheus', 'SolarWinds', 'Nagios', 'Cisco Prime', 'NetBrain', 'Wireshark'],
+    items: ['Paessler PRTG','IP Fabric', 'Splunk', 'DX NetOps Spectrum', 'Grafana', 'Prometheus', 'SolarWinds', 'Nagios', 'Cisco Prime', 'NetBrain', 'Wireshark', 'New Relic', 'Logic Monitor', 'Science Logic', 'Manage Engine'],
   },
   {
     title: 'Coding & Automation',
@@ -91,15 +100,15 @@ const sections = [
   },
   {
     title: 'DevOps',
-    items: ['Docker', 'Podman', 'Node js', 'React js', 'Hostinger', 'javascript'],
+    items: ['Docker', 'Podman', 'Node js', 'React js', 'Hostinger', 'javascript', 'Kubernetes'],
   },
   {
     title: 'ITSM & Collaboration',
-    items: ['Atlassian JIRA', 'M365', 'Copilot','Zendesk','Atlassian Confluence', 'Service Now'],
+    items: ['Atlassian JIRA', 'M365', 'Zendesk','Atlassian Confluence', 'Service Now', 'Miro', 'BigPanda'],
   },
   {
     title: 'Operating Systems',
-    items: ['Windows', 'RHEL', 'Ubuntu', 'Kali', 'Raspbian'],
+    items: ['Windows', 'RHEL', 'Ubuntu', 'Kali', 'Raspbian', 'Debian'],
   },
 ];
 
